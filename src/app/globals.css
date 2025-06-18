@@ -4,7 +4,9 @@
   --background: #1c2e3d;
   --secondaryBackground: #152535;
   --secondaryText: #c1c9e5;
-  --selectBackground: #10202d;
+  --darkBackground: #10202d;
+  --foreground: #253241;
+  --mutedForeground: #192c40;
   --white: #ffffff;
   --blue: #0f70dc;
   --border: #273847;
@@ -16,8 +18,14 @@
   --color-white: var(--white);
   --color-blue: var(--blue);
   --color-secondaryText: var(--secondaryText);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-darkBackground: var(--darkBackground);
+  --color-mutedForeground: var(--mutedForeground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --radius-md: 5px;
+  --gap-2.5: 5px;
 }
 
 body {
