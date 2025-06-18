@@ -9,7 +9,7 @@ export default function SiteHeader() {
           <SiteLogo />
           <DepositDisplay amount={500.0} className="lg:hidden" />
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-[5px]">
             <DepositDisplay amount={500.0} className="hidden lg:flex" />
             <Notifications />
             <UserProfile />
