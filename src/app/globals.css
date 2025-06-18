@@ -10,6 +10,7 @@
   --white: #ffffff;
   --blue: #0f70dc;
   --border: #273847;
+  --sidebar: #162231;
 }
 
 @theme inline {
@@ -22,6 +23,7 @@
   --color-border: var(--border);
   --color-darkBackground: var(--darkBackground);
   --color-mutedForeground: var(--mutedForeground);
+  --color-sidebar: var(--sidebar);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --radius-md: 5px;

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { SiteHeader } from "@/components";
+import { SiteHeader, SiteFooter } from "@/components";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -28,8 +30,16 @@ export default function RootLayout({
           "antialiased bg-background min-h-screen flex flex-col scroll-smooth"
         )}
       >
-        <SiteHeader />
-        {children}
+        <SidebarProvider defaultOpen={false}>
+          <AppSidebar />
+          <>
+            <main className="flex-1 flex flex-col">
+              <SiteHeader />
+              {children}
+              <SiteFooter />
+            </main>
+          </>
+        </SidebarProvider>
       </body>
     </html>
   );

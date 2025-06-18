@@ -5,7 +5,7 @@ export default function SiteHeader() {
   return (
     <header className="bg-secondaryBackground">
       <Shell as="div">
-        <div className="flex items-center justify-between px-2.5 py-3.5">
+        <div className="flex items-center justify-between px-2.5 py-3.5 lg:px-0">
           <SiteLogo />
           <DepositDisplay amount={500.0} className="lg:hidden" />
 
