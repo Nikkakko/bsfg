@@ -1,9 +1,15 @@
 import { legalLogos } from "@/config/data";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-export default function LegalLogos() {
+//extends div props
+interface LegalLogoProps extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
+}
+
+export default function LegalLogos({ ...props }: LegalLogoProps) {
   return (
-    <div className="flex flex-wrap gap-2.5">
+    <div className={cn("flex flex-wrap gap-2.5", props.className)}>
       {legalLogos.map(logo => (
         <Image
           key={logo.name}

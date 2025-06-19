@@ -57,7 +57,7 @@ export default function SiteFooter() {
         </div>
 
         {/* Payment Methods */}
-        <div className="border-t border-separator pt-8 mb-8">
+        <div className="border-t border-separator py-8">
           <div className="flex flex-wrap items-center justify-center gap-4">
             {paymentMethods.map(method => (
               <div
@@ -78,22 +78,22 @@ export default function SiteFooter() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-separator pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            {/* Copyright */}
-            <div className="text-center md:text-left">
+        <div className="border-t border-separator pt-[25px] flex flex-col lg:pt-0 relative ">
+          <div className="flex flex-col  border-b border-separator pb-[25px] lg:hidden">
+            <LegalLogos className="justify-center lg:hidden " />
+          </div>
+          <LegalLogos className="hidden lg:flex justify-center w-full max-w-[170px] absolute right-0 top-2.5  " />
+
+          {/* Responsible Gaming Notice */}
+          <div className="mt-6 text-center flex flex-col gap-5 ">
+            <div className="text-center md:text-center">
               <p className="text-gray text-sm">
+                <span className="text-cSymbol">©</span>{" "}
                 {new Date().getFullYear()}{" "}
                 <span className="font-bold text-white">CASINO.COM</span> All
                 Rights Reserved.
               </p>
             </div>
-
-            <LegalLogos />
-          </div>
-
-          {/* Responsible Gaming Notice */}
-          <div className="mt-6 text-center flex flex-col gap-5">
             <p className="text-gray text-xs leading-relaxed font-bold">
               {footerData.responsibleGamingNotice.title}
             </p>
