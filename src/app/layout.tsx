@@ -34,7 +34,7 @@ export default function RootLayout({
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
           <>
-            <main className="flex-1 flex flex-col">
+            <main className="flex-1 flex flex-col overflow-x-hidden">
               <SiteHeader />
               {children}
               <SiteFooter />

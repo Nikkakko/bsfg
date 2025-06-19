@@ -8,7 +8,7 @@ import { Shell } from "@/components/ui/shell";
 
 export default function Home() {
   return (
-    <Shell className="flex-1 flex flex-col  text-iconColor px-2.5 2xl:px-0 pt-2.5 pb-5 lg:pb-10 lg:pt-[15px]">
+    <Shell className="flex-1 flex flex-col w-full  text-iconColor px-2.5 2xl:px-0 pt-2.5 pb-5 lg:pb-10 lg:pt-[15px]">
       <Hero />
       <Showcase />
       <div className="flex flex-col gap-2.5 mt-[15px]">
@@ -19,7 +19,6 @@ export default function Home() {
             <ProvidersFilter />
           </div>
         </div>
-
         <Lobby />
       </div>
     </Shell>
