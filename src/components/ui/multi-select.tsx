@@ -113,7 +113,7 @@ export const MultiSelect = React.forwardRef<
             ref={ref}
             {...props}
             onClick={handleTogglePopover}
-            className="bg-darkBackground border border-border rounded-lg flex items-center pl-3 pr-2 text-sm font-medium text-secondaryText shadow-none h-10 lg:w-[185px]"
+            className="bg-darkBackground border border-border rounded-lg flex items-center pl-3 pr-2 text-sm font-medium text-secondaryText shadow-none h-10 w-full lg:w-[185px]"
           >
             <div className="flex items-center justify-between w-full mx-auto">
               {triggerIcon && triggerIcon}

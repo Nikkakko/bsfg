@@ -1,7 +1,7 @@
 interface fetchGames {
   search?: string;
   page?: number;
-  limit?: number;
+  per_page?: number;
   providers?: string[];
   category?: string[];
 }
@@ -9,12 +9,12 @@ interface fetchGames {
 export async function fetchGames({
   search,
   page = 1,
-  limit = 20,
+  per_page = 10,
   providers,
   category,
 }: fetchGames) {
   const res = await fetch(
-    `https://api.remailer.eu/games/list.php?search=${search}&page=${page}&limit=${limit}&provider=${providers}&category=${category}`,
+    `https://api.remailer.eu/games/list.php?search=${search}&current_page=${page}&per_page=${per_page}&provider=${providers}&category=${category}`,
     {
       cache: "no-store",
     }
@@ -23,5 +23,9 @@ export async function fetchGames({
   if (!res.ok) throw new Error("Failed to fetch games");
 
   const data = await res.json();
-  return data.data;
+  return {
+    games: data.data,
+    pagination: data.pagination,
+    filters_applied: data.filters_applied,
+  };
 }
