@@ -109,3 +109,11 @@ export const availableProviders = [
   { name: "netent", icon: "/images/netent_icon.png" },
   { name: "playtech", icon: "/images/playtech_icon.png" },
 ];
+
+export const CATEGORY_LABELS: Record<string, string> = {
+  "featured-games": "Featured Games",
+  "new-releases": "New Releases",
+  "hot-games": "Hot Games",
+  "bonus-buy": "Bonus Buy",
+  live: "Live Games",
+};
