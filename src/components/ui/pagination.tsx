@@ -53,7 +53,7 @@ const PaginationButton = ({
     aria-current={isActive ? "page" : undefined}
     variant={isActive ? "outline" : "ghost"}
     size={size}
-    className={className}
+    className={cn(className, "text-white hover:bg-darkBackground")}
     {...props}
   />
 );

@@ -36,6 +36,8 @@ export default async function Home({ searchParams }: PageProps) {
   });
   const grouped = groupByCategory(games.games, Object.keys(CATEGORY_LABELS));
 
+  console.log(games.pagination.total_pages, "total pages");
+
   return (
     <Shell className="flex-1 flex flex-col w-full  text-iconColor px-2.5 2xl:px-0 pt-2.5 pb-5 lg:pb-10 lg:pt-[15px]">
       <Hero />
@@ -65,8 +67,10 @@ export default async function Home({ searchParams }: PageProps) {
       <section className="mt-2.5 lg:mt-[25px]">
         <ProvidersRow />
       </section>
-      {games.pagination.totalPages > 1 && (
-        <ClientPaginationControls numPages={games.pagination.totalPages || 1} />
+      {games.pagination.total_pages > 1 && (
+        <ClientPaginationControls
+          numPages={games.pagination.total_pages || 1}
+        />
       )}
     </Shell>
   );
