@@ -12,6 +12,8 @@
   --blue: #0f70dc;
   --border: #273847;
   --sidebar: #162231;
+  --gray: #8898b0;
+  --separator: #282f48;
 }
 
 @theme inline {
@@ -26,6 +28,8 @@
   --color-mutedForeground: var(--mutedForeground);
   --color-sidebar: var(--sidebar);
   --color-hoverBackground: var(--hoverBackground);
+  --color-gray: var(--gray);
+  --color-separator: var(--separator);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --radius-md: 5px;
