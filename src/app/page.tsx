@@ -8,12 +8,19 @@ import ProvidersRow from "@/components/providers-row";
 import SearchInput from "@/components/search-input";
 import { Shell } from "@/components/ui/shell";
 import { CATEGORY_LABELS } from "@/config/data";
+import { loadSearchParams } from "@/hooks/params/search-params";
 import { fetchGames } from "@/lib/fetch-games";
 import { groupByCategory } from "@/lib/group-by-category";
 import { notFound } from "next/navigation";
+import { SearchParams } from "nuqs";
 
-export default async function Home() {
-  const games = await fetchGames();
+type PageProps = {
+  searchParams: Promise<SearchParams>;
+};
+
+export default async function Home({ searchParams }: PageProps) {
+  const { search } = await loadSearchParams(searchParams);
+  const games = await fetchGames({ search });
   const grouped = groupByCategory(games, Object.keys(CATEGORY_LABELS));
 
   if (!games) {

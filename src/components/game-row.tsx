@@ -40,6 +40,8 @@ export default function GameRow({
     }
   };
 
+  if (games.length === 0) return null;
+
   return (
     <Carousel className="w-full max-w-full">
       <div className="flex justify-between items-center">

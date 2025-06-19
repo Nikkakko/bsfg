@@ -6,6 +6,7 @@ import { SiteHeader, SiteFooter } from "@/components";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import MobileNav from "@/components/mobile-nav";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -31,17 +32,17 @@ export default function RootLayout({
           "antialiased bg-background min-h-screen flex flex-col scroll-smooth"
         )}
       >
-        <SidebarProvider defaultOpen={false}>
-          <AppSidebar />
-          <>
+        <NuqsAdapter>
+          <SidebarProvider defaultOpen={false}>
+            <AppSidebar />
             <main className="flex-1 flex flex-col overflow-x-hidden">
               <SiteHeader />
               {children}
               <SiteFooter />
               <MobileNav />
             </main>
-          </>
-        </SidebarProvider>
+          </SidebarProvider>
+        </NuqsAdapter>
       </body>
     </html>
   );
