@@ -102,7 +102,7 @@ export default function Hero() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className=" flex justify-center gap-2 pb-2 mt-2.5">
+      <div className=" flex justify-center gap-2  mt-2.5">
         {filteredSlides.map((slide, index) => (
           <button
             type="button"

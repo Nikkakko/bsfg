@@ -92,3 +92,20 @@ export const legalLogos = [
   { name: "ga", icon: "/images/ga_icon.png" },
   { name: "18+", icon: "/images/18_icon.png" },
 ];
+
+export const availableCategories = [
+  { name: "Slots", icon: "/images/slots_icon.png" },
+  { name: "Blackjack", icon: "/images/blackjack_icon.png" },
+  { name: "Roulette", icon: "/images/roulette_icon.png" },
+  { name: "Live", icon: "/images/live_icon.png" },
+  { name: "Baccarat", icon: "/images/baccarat_icon.png" },
+  { name: "Crash", icon: "/images/crash_icon.png" },
+];
+
+export const availableProviders = [
+  { name: "bgaming", icon: "/images/bgaming_icon.png" },
+  { name: "gamebeat", icon: "/images/gamebeat_icon.png" },
+  { name: "pragmaticplay", icon: "/images/pragmaticplay_icon.png" },
+  { name: "netent", icon: "/images/netent_icon.png" },
+  { name: "playtech", icon: "/images/playtech_icon.png" },
+];
