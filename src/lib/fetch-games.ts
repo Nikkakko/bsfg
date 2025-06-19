@@ -14,7 +14,7 @@ export async function fetchGames({
   category,
 }: fetchGames) {
   const res = await fetch(
-    `https://api.remailer.eu/games/list.php?search=${search}&current_page=${page}&per_page=${per_page}&provider=${providers}&category=${category}`,
+    `https://api.remailer.eu/games/list.php?search=${search}&page=${page}&limit=${per_page}&provider=${providers}&category=${category}`,
     {
       cache: "no-store",
     }

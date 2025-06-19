@@ -7,7 +7,7 @@ import {
 
 export const paginationParams = {
   page: parseAsInteger.withDefault(1),
-  per_page: parseAsInteger.withDefault(10),
+  per_page: parseAsInteger.withDefault(20),
 };
 
 export const paginationParamsCache = createSearchParamsCache(paginationParams);
