@@ -705,6 +705,194 @@ const LanguageIcon = React.forwardRef<SVGSVGElement, IconProps>(
 
 LanguageIcon.displayName = "LanguageIcon";
 
+const HomeIcon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, ...props }, ref) => (
+    <svg
+      width={size}
+      height={size}
+      ref={ref}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M12 15V18"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M21.6359 12.9579L21.3572 14.8952C20.8697 18.2827 20.626 19.9764 19.451 20.9882C18.2759 22 16.5526 22 13.1061 22H10.8939C7.44737 22 5.72409 22 4.54903 20.9882C3.37396 19.9764 3.13025 18.2827 2.64284 14.8952L2.36407 12.9579C1.98463 10.3208 1.79491 9.00229 2.33537 7.87495C2.87583 6.7476 4.02619 6.06234 6.32691 4.69181L7.71175 3.86687C9.80104 2.62229 10.8457 2 12 2C13.1543 2 14.199 2.62229 16.2882 3.86687L17.6731 4.69181C19.9738 6.06234 21.1242 6.7476 21.6646 7.87495"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+);
+
+HomeIcon.displayName = "HomeIcon";
+
+const SearchIcon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, ...props }, ref) => (
+    <svg
+      width={size}
+      height={size}
+      ref={ref}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M11.5 2C16.75 2 21 6.25 21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 7.8 4.11 4.6 7.2 3.03"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22 22L20 20"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+);
+
+SearchIcon.displayName = "SearchIcon";
+
+const ChatIcon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, ...props }, ref) => (
+    <svg
+      width={size}
+      height={size}
+      ref={ref}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M17 3.33782C15.5291 2.48697 13.8214 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22C17.5228 22 22 17.5228 22 12C22 10.1786 21.513 8.47087 20.6622 7"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M8 12H8.009M11.991 12H12M15.991 12H16"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+);
+
+ChatIcon.displayName = "ChatIcon";
+
+const MenuIcon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, ...props }, ref) => (
+    <svg
+      width={size}
+      height={size}
+      ref={ref}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M3 6H21"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M9.49 12H21"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M3 12H5.99"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M3 18H21"
+        stroke="#C1C9E5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+);
+
+MenuIcon.displayName = "MenuIcon";
+
+const DepositeMobileIcon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, ...props }, ref) => (
+    <svg
+      width={size}
+      height={size}
+      ref={ref}
+      viewBox="0 0 25 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M2.20001 7.91998C2.20001 4.83998 3.96001 3.52002 6.60001 3.52002H15.39C17.63 3.52002 19.24 4.47001 19.67 6.64001C19.75 7.03001 19.79 7.44998 19.79 7.91998V13.07C19.79 16.15 18.03 17.47 15.39 17.47H6.60001C6.15001 17.47 5.72001 17.43 5.32001 17.34C5.07001 17.3 4.82999 17.23 4.60999 17.15C3.10999 16.59 2.20001 15.29 2.20001 13.07V12"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22.8 15.01V16.07C22.8 19.15 21.04 20.47 18.4 20.47H9.60999C8.86999 20.47 8.2 20.37 7.62 20.15C6.43 19.71 5.61999 18.8 5.32999 17.34C5.72999 17.43 6.15999 17.47 6.60999 17.47H15.4C18.04 17.47 19.8 16.15 19.8 13.07V7.91998C19.8 7.44998 19.76 7.03001 19.68 6.64001C21.59 7.03001 22.8 8.36998 22.8 10.92"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.6404 10.4999C13.6404 9.03988 12.4604 7.85986 11.0004 7.85986C9.54037 7.85986 8.36035 9.03988 8.36035 10.4999C8.36035 11.9599 9.54037 13.1399 11.0004 13.1399"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.28027 8.2998V12.6998"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.7197 8.2998V12.6998"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+);
+
+DepositeMobileIcon.displayName = "DepositeMobileIcon";
+
 export {
   ShoppingBag,
   UserProfileIcon,
@@ -728,4 +916,9 @@ export {
   ProvidersIcon,
   SupportIcon,
   LanguageIcon,
+  HomeIcon,
+  SearchIcon,
+  ChatIcon,
+  MenuIcon,
+  DepositeMobileIcon,
 };

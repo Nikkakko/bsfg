@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { SiteHeader, SiteFooter } from "@/components";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import MobileNav from "@/components/mobile-nav";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -37,6 +38,7 @@ export default function RootLayout({
               <SiteHeader />
               {children}
               <SiteFooter />
+              <MobileNav />
             </main>
           </>
         </SidebarProvider>

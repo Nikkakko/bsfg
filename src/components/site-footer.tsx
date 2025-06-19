@@ -8,8 +8,8 @@ import { FooterLink } from "@/types/global";
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-darkBackground text-white border-t-2 border-border">
-      <Shell className="px-[25px] pt-[15px] pb-2.5 lg:pt-[35px]  lg:px-0">
+    <footer className="bg-darkBackground text-white border-t-2 border-border mb-[55px] lg:mb-0">
+      <Shell className="px-[25px] pt-[15px] pb-2.5 lg:pt-[35px]  lg:px-0 ">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 mb-12">
           {/* Promotional Text */}
