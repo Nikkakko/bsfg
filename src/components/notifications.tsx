@@ -1,10 +1,10 @@
-import IconWrapper from "./shared/icon-wrapper";
+import { Button } from "./ui/button";
 import { BellIcon } from "./shared/icons";
 
 export default function Notifications() {
   return (
-    <IconWrapper>
+    <Button variant="icon" size="icon">
       <BellIcon />
-    </IconWrapper>
+    </Button>
   );
 }
