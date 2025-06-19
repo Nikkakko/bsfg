@@ -1,12 +1,8 @@
 "use client";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
-import { useState } from "react";
+import { MultiSelect } from "@/components/ui/multi-select";
 import { CollectionIcon, DiceIcon } from "./shared/icons";
+import { useQueryStates } from "nuqs";
+import { collectionsParams } from "@/hooks/params/collection-params";
 
 const collections = [
   { value: "all", label: "All Collections" },
@@ -17,37 +13,40 @@ const collections = [
 ];
 
 export default function CollectionsFilter() {
-  const [selected, setSelected] = useState("all");
+  const [{ collections: collectionsParam }, setCollections] = useQueryStates(
+    collectionsParams,
+    {
+      shallow: false,
+      clearOnDefault: true,
+    }
+  );
+
+  // Remove 'all' from selected values for MultiSelect
+  const selected = collectionsParam.length > 0 ? collectionsParam : [];
+
+  // Prepare options for MultiSelect, with icons
+  const multiSelectOptions = collections
+    .filter(item => item.value !== "all")
+    .map(item => ({
+      ...item,
+      icon: DiceIcon,
+    }));
 
   return (
-    <Select value={selected} onValueChange={setSelected}>
-      <SelectTrigger className="bg-darkBackground border border-border rounded-lg flex items-center px-4 text-sm font-medium text-secondaryText shadow-none h-10 lg:w-[185px]">
-        <CollectionIcon size={24} />
-        {/* <SelectValue placeholder="Collections" /> */}
-        <span className="flex-1 text-left text-secondaryText capitalize">
-          {selected === "all" ? "Collections" : selected}
-        </span>
-      </SelectTrigger>
-      <SelectContent className="bg-darkBackground border border-border rounded-b-lg ">
-        {collections.map(item => (
-          <SelectItem
-            key={item.value}
-            value={item.value}
-            className={`flex items-center px-4 py-3 text-base text-white cursor-pointer
-              ${
-                selected === item.value
-                  ? "bg-darkBackground border-l-4 border-blue"
-                  : "border-l-4 border-transparent"
-              }
-              hover:bg-secondaryBackground transition-colors`}
-          >
-            <div className="flex items-center gap-2">
-              <DiceIcon size={24} />
-              {item.label}
-            </div>
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+    <div className="w-full  ">
+      <MultiSelect
+        options={multiSelectOptions}
+        onValueChange={values => {
+          if (values.length === 0) {
+            setCollections({ collections: [] });
+          } else {
+            setCollections({ collections: values });
+          }
+        }}
+        defaultValue={selected}
+        placeholder="Collections"
+        triggerIcon={<CollectionIcon size={16} color="white" />}
+      />
+    </div>
   );
 }

@@ -1,51 +1,53 @@
 "use client";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
-
-import { useState } from "react";
+import { MultiSelect } from "@/components/ui/multi-select";
 import { DiceIcon, LayoutListIcon } from "./shared/icons";
+import { useQueryStates } from "nuqs";
+import { providersParams } from "@/hooks/params/providers-params";
 
-const providers = [
+const providersData = [
   { value: "all", label: "All Providers" },
   { value: "bgaming", label: "Bgaming" },
   { value: "gamebeat", label: "GameBeat" },
-  { value: "pragmatic", label: "Pragmatic Play" },
+  { value: "pragmaticplay", label: "Pragmatic Play" },
   { value: "netent", label: "NetEnt" },
+  { value: "playtech", label: "Playtech" },
 ];
 
 export default function ProvidersFilter() {
-  const [selected, setSelected] = useState("all");
+  const [{ providers: providersParam }, setProviders] = useQueryStates(
+    providersParams,
+    {
+      shallow: false,
+      clearOnDefault: true,
+    }
+  );
+
+  // Remove 'all' from selected values for MultiSelect
+  const selected = providersParam.length > 0 ? providersParam : [];
+
+  // Prepare options for MultiSelect, with icons
+  const multiSelectOptions = providersData
+    .filter(item => item.value !== "all")
+    .map(item => ({
+      ...item,
+      icon: DiceIcon,
+    }));
 
   return (
-    <Select value={selected} onValueChange={setSelected}>
-      <SelectTrigger className="bg-darkBackground border border-border rounded-lg flex items-center px-4 text-sm font-medium text-secondaryText shadow-none h-10 lg:w-[185px]">
-        <LayoutListIcon size={24} />
-        <span className="flex-1 text-left text-secondaryText capitalize">
-          {selected === "all" ? "Providers" : selected}
-        </span>
-      </SelectTrigger>
-      <SelectContent className="bg-darkBackground border border-border rounded-b-lg ">
-        {providers.map(item => (
-          <SelectItem
-            key={item.value}
-            value={item.value}
-            className={`flex items-center px-4 py-3 text-base text-white cursor-pointer
-              ${
-                selected === item.value
-                  ? "bg-darkBackground border-l-4 border-blue"
-                  : "border-l-4 border-transparent"
-              }
-              hover:bg-secondaryBackground transition-colors`}
-          >
-            <DiceIcon size={24} />
-            {item.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+    <div className="w-full">
+      <MultiSelect
+        options={multiSelectOptions}
+        onValueChange={values => {
+          if (values.length === 0) {
+            setProviders({ providers: [] });
+          } else {
+            setProviders({ providers: values });
+          }
+        }}
+        triggerIcon={<LayoutListIcon size={16} color="white" />}
+        defaultValue={selected}
+        placeholder="Providers"
+      />
+    </div>
   );
 }

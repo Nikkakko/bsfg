@@ -8,6 +8,8 @@ import ProvidersRow from "@/components/providers-row";
 import SearchInput from "@/components/search-input";
 import { Shell } from "@/components/ui/shell";
 import { CATEGORY_LABELS } from "@/config/data";
+import { loadCategoriesParams } from "@/hooks/params/category-params";
+import { loadProvidersParams } from "@/hooks/params/providers-params";
 import { loadSearchParams } from "@/hooks/params/search-params";
 import { fetchGames } from "@/lib/fetch-games";
 import { groupByCategory } from "@/lib/group-by-category";
@@ -20,7 +22,10 @@ type PageProps = {
 
 export default async function Home({ searchParams }: PageProps) {
   const { search } = await loadSearchParams(searchParams);
-  const games = await fetchGames({ search });
+  const { providers } = await loadProvidersParams(searchParams);
+  const { category } = await loadCategoriesParams(searchParams);
+
+  const games = await fetchGames({ search, providers, category });
   const grouped = groupByCategory(games, Object.keys(CATEGORY_LABELS));
 
   if (!games) {
@@ -41,7 +46,11 @@ export default async function Home({ searchParams }: PageProps) {
         </div>
         <Lobby />
       </div>
-
+      {games.length === 0 && (
+        <div className="flex flex-col gap-2.5 mt-2.5 lg:mt-[25px] text-center">
+          <p className="text-secondaryText text-sm">No games found</p>
+        </div>
+      )}
       {/* sections for games */}
       <section className="mt-2.5 lg:mt-[25px] flex flex-col gap-2.5">
         {Object.entries(CATEGORY_LABELS).map(([key, label]) => (
