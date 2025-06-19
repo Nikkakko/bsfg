@@ -44,6 +44,7 @@ export function ClientPaginationControls({
             <PaginationButton
               isActive={page === i + 1}
               onClick={() => setPage(i + 1)}
+              className="h-5 w-5 lg:w-10 lg:h-10"
             >
               {i + 1}
             </PaginationButton>
