@@ -28,6 +28,7 @@ export function ClientPaginationControls({
     paginationParams.page.withOptions({
       startTransition,
       shallow: false, // Send updates to the server
+      scroll: true,
     })
   );
   return (
