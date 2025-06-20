@@ -1,9 +1,11 @@
+import CasinoDescription from "@/components/casino-description";
 import CollectionsFilter from "@/components/collections-filter";
 import GameRow from "@/components/game-row";
 import Hero from "@/components/landing/hero";
 import Lobby from "@/components/landing/lobby";
 import Showcase from "@/components/landing/showcase";
 import { ClientPaginationControls } from "@/components/page-controls";
+import PaymentMethods from "@/components/payment-methods";
 import ProvidersFilter from "@/components/providers-filter";
 import ProvidersRow from "@/components/providers-row";
 import SearchInput from "@/components/search-input";
@@ -64,6 +66,10 @@ export default async function Home({ searchParams }: PageProps) {
       {/* section for providers */}
       <section className="mt-2.5 lg:mt-[25px]">
         <ProvidersRow />
+      </section>
+      <section className="mt-2.5 lg:mt-[25px] flex flex-col gap-2.5">
+        <PaymentMethods />
+        <CasinoDescription />
       </section>
       {games.pagination.total_pages > 1 && (
         <ClientPaginationControls

@@ -117,3 +117,9 @@ export const CATEGORY_LABELS: Record<string, string> = {
   "bonus-buy": "Bonus Buy",
   live: "Live Games",
 };
+
+export const fullText = `CASINO is your premier online casino platform, offering a world-class gaming experience with hundreds of top-tier casino games, exclusive bonuses, and lightning-fast payouts. Whether you're a fan of classic slots, live dealer games, table games, or jackpot progressives, CASINO delivers everything you need for high-stakes excitement right from the comfort of your home or mobile device.
+
+ Join thousands of players worldwide who trust CASINO for its secure, fair, and licensed gameplay. We partner with the industry's most reputable software providers to bring you an unbeatable selection of games with stunning graphics, realistic sound effects, and smooth gameplay. From roulette and blackjack to immersive live dealer experiences, our extensive game library ensures there's something for every type of player. With 24/7 customer support and multiple secure payment options, you know players and subscribers can enjoy peace of mind.
+ 
+ At CASINO, new users are greeted with a generous welcome bonus package that includes match bonuses, cashback credit, contest offers, free spins, and VIP rewards for loyal players. Our platform supports multiple payment options, including credit cards, e-wallets, and cryptocurrency, with instant deposits and quick transfers, all processed with the highest level of security and privacy. Our 24/7 customer support team ensures your questions and concerns are addressed promptly, so you never need assistance.`;
